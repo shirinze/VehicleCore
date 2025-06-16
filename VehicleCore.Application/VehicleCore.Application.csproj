@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleCore.DomainService\VehicleCore.DomainService.csproj" />
+  </ItemGroup>
+
 </Project>
