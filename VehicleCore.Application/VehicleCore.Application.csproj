@@ -8,6 +8,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleCore.DomainService\VehicleCore.DomainService.csproj" />
+    <ProjectReference Include="..\VehicleCore.Resources\VehicleCore.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Queries\Car\GetList\" />
+    <Folder Include="Queries\Motorcycle\" />
   </ItemGroup>
 
 </Project>
