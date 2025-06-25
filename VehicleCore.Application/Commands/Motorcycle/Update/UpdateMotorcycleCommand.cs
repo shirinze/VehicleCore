@@ -3,4 +3,4 @@ using VehicleCore.DomainModel.Enums;
 
 namespace VehicleCore.Application.Commands.Motorcycle.Update;
 
-public record UpdateMotorcycleCommand(int Id,string title,FuelType fuel):IRequest;
+public record UpdateMotorcycleCommand(int Id,string Title,FuelType Fuel):IRequest;

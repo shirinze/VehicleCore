@@ -1,8 +1,14 @@
+using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
+using VehicleCore.Application.Behaviours;
 using VehicleCore.DomainModel.Attributes;
 using VehicleCore.DomainModel.BaseModels;
+using VehicleCore.DomainService;
+using VehicleCore.DomainService.Repositories;
+using VehicleCore.Infrastructure;
 using VehicleCore.Infrastructure.Data.DBContexts;
+using VehicleCore.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +21,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
+
+builder.Services.AddMediatR(options =>
+{
+    options.RegisterServicesFromAssembly(typeof(ValidationBehaviour<,>).Assembly);
+    options.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+});
+builder.Services.AddValidatorsFromAssembly(typeof(ValidationBehaviour<,>).Assembly);
+
+
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 

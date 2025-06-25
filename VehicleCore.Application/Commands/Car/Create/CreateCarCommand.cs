@@ -3,4 +3,4 @@ using VehicleCore.DomainModel.Enums;
 
 namespace VehicleCore.Application.Commands.Car.Create;
 
-public record CreateCarCommand(string title, GearBoxType gearBox): IRequest;
+public record CreateCarCommand(string Title, GearBoxType GearBox): IRequest;

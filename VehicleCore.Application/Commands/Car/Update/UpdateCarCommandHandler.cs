@@ -12,7 +12,7 @@ public class UpdateCarCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<U
         var car =await unitOfWork.CarRepository.GetByIdAsync(request.Id, cancellationToken) ??
             throw new NotFoundException(string.Format(Messages.NotFound, nameof(DomainModel.Models.Car), request.Id));
 
-        car.Update(request.title, request.gearBox);
+        car.Update(request.Title, request.GearBox);
         unitOfWork.CarRepository.Update(car);
         await unitOfWork.CommitAsync(cancellationToken);
     }

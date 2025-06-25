@@ -9,7 +9,7 @@ public class CreateCarCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<C
     public async Task Handle(CreateCarCommand request, CancellationToken cancellationToken)
     {
         var trackingCode = string.Empty;
-        var car = DomainModel.Models.Car.Create(request.title,trackingCode, request.gearBox);
+        var car = DomainModel.Models.Car.Create(request.Title,trackingCode, request.GearBox);
         await unitOfWork.CarRepository.AddAsync(car,cancellationToken);
         await unitOfWork.CommitAsync(cancellationToken);
      

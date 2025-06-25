@@ -11,7 +11,7 @@ public class UpdateMotorcycleCommandHandler(IUnitOfWork unitOfWork) : IRequestHa
     {
         var motorcycle = await unitOfWork.MotorcycleRepository.GetByIdAsync(request.Id, cancellationToken) ??
             throw new NotFoundException(string.Format(Messages.NotFound, nameof(DomainModel.Models.Motorcycle), request.Id));
-        motorcycle.Update(request.title, request.fuel);
+        motorcycle.Update(request.Title, request.Fuel);
 
         unitOfWork.MotorcycleRepository.Update(motorcycle);
 
