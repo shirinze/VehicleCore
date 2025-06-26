@@ -1,6 +1,7 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using VehicleCore.API.Middlewares;
 using VehicleCore.Application.Behaviours;
 using VehicleCore.DomainModel.Attributes;
 using VehicleCore.DomainModel.BaseModels;
@@ -50,6 +51,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+app.UseMiddleware<RateLimitMiddleware>();
 
 var enumTypes = typeof(BaseEntity).Assembly
     .GetTypes()

@@ -1,0 +1,25 @@
+﻿
+using VehicleCore.DomainModel.Models;
+using VehicleCore.DomainService.BaseSpecifications;
+
+namespace VehicleCore.DomainService.Specifications;
+
+public class GetMotorcycleByFilterSpecification:BaseSpecification<Motorcycle>
+{
+    public GetMotorcycleByFilterSpecification(string? q,OrderType? orderType,int? pageSize,int? pageNumber)
+    {
+        AddCriteria(x => x.IsActive);
+        if (!string.IsNullOrEmpty(q))
+        {
+            AddCriteria(x => x.Title.Contains(q) || x.TrackingCode.Contains(q));
+        }
+        if (orderType != null)
+        {
+            AddOrderBy(x => x.Id, orderType.Value);
+        }
+        if(pageSize.HasValue && pageNumber.HasValue)
+        {
+            AddPagination(pageSize.Value, pageNumber.Value);
+        }
+    }
+}
