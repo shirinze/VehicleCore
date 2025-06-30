@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCore.DomainModel", "VehicleCore.DomainModel\VehicleCore.DomainModel.csproj", "{390E95F7-CCEC-48A0-8E1A-D0A19851DFE9}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCore.API", "VehicleCore.API\VehicleCore.API.csproj", "{05EB1C54-28EA-4419-94FD-5735AC02473D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCore.Resources", "VehicleCore.Resources\VehicleCore.Resources.csproj", "{16F72B70-FB99-471B-8C8C-B74F4838543B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingCode", "TrackingCode\TrackingCode.csproj", "{7D126B78-C7D4-4925-AFA1-1AEE56A534BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,8 +47,15 @@ Global
 		{16F72B70-FB99-471B-8C8C-B74F4838543B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16F72B70-FB99-471B-8C8C-B74F4838543B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16F72B70-FB99-471B-8C8C-B74F4838543B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D126B78-C7D4-4925-AFA1-1AEE56A534BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D126B78-C7D4-4925-AFA1-1AEE56A534BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D126B78-C7D4-4925-AFA1-1AEE56A534BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D126B78-C7D4-4925-AFA1-1AEE56A534BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1451C9D0-967F-4866-8F92-F9AD32502EB0}
 	EndGlobalSection
 EndGlobal
